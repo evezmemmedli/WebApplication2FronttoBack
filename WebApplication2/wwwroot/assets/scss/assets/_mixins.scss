@@ -1,0 +1,222 @@
+$main-transition-speed: 400ms;
+
+@mixin flex($align: null, $justify: null, $direction: null, $wrap: null) {
+  display: flex;
+
+  @if ($direction) {
+    flex-direction: $direction;
+  }
+
+  @if ($align) {
+    align-items: $align;
+  }
+
+  @if ($justify) {
+    justify-content: $justify;
+  }
+
+  @if ($wrap) {
+    flex-wrap: $wrap;
+  }
+}
+
+$breakpoints-up: (
+  "medium": 768px,
+  "large": 992px,
+);
+
+$breakpoints-down: (
+  "small": 767px,
+  "medium": 991px,
+  "large": 1199px,
+);
+
+@mixin breakpoint-up($size) {
+  @if map-has-key($breakpoints-up, $size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @if map-has-key($breakpoints-down, $size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+      @content;
+    }
+  }
+}
+
+@mixin moveToLeftRight() {
+  animation: moveToLeftRight 800ms forwards;
+  @keyframes moveToLeftRight {
+    0% {
+      // opacity: 0;
+      transform: translate(30%, 20%);
+    }
+    70% {
+      // opacity: 1;
+      transform: translate(8%, 20%);
+    }
+    100% {
+      transform: translate(10%, 20%);
+    }
+  }
+}
+@mixin moveToRightLeft {
+  animation: moveToRightLeft 800ms forwards;
+  @keyframes moveToRightLeft {
+    0% {
+      opacity: 0;
+      transform: translate(0, 50%);
+    }
+    70% {
+      opacity: 1;
+      transform: translate(12%, 50%);
+    }
+    100% {
+      transform: translate(10%, 50%);
+    }
+  }
+}
+@mixin scaleAnimation {
+  animation: scaleUp 1000ms;
+  @keyframes scaleUp {
+    from {
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+@mixin moveToLeft {
+  animation: moveToLeft 1000ms forwards;
+  @keyframes moveToLeft {
+    from {
+      opacity: 0;
+      transform: translate(15%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+}
+@mixin nav-dropdown() {
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 10;
+  background-color: $white;
+  color: $dark;
+  border: 1px solid $grey;
+  padding: 2rem 0;
+  text-transform: capitalize;
+  pointer-events: none;
+  transform: translateY(20%);
+  transition: $main-transition-speed opacity, $main-transition-speed transform;
+}
+
+@mixin main-style-a() {
+  a {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1rem 1.5rem;
+    font-weight: 400;
+    color: $dark;
+    cursor: pointer;
+    transition: 300ms all;
+    &:hover {
+      color: $mainColor;
+    }
+  }
+}
+
+@mixin main-title() {
+  margin-top: 7.2rem;
+  text-align: center;
+  padding: 0px 0px 42px;
+  h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.7rem;
+  }
+}
+
+@mixin main-btn() {
+  border-radius: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  color: $mainColor;
+  transition: 0.4s;
+  display: inline-block;
+  padding: 1.4rem 2.5rem;
+  background-color: $dark;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+@mixin globals() {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  .custom-container {
+    width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .btn {
+    width: 4.6rem;
+    height: 4.6rem;
+    background-color: $white-200;
+    color: $dark;
+    border: none;
+    cursor: pointer;
+    transition: 300ms all;
+    &:hover {
+      color: $white;
+      background-color: $mainColor;
+    }
+  }
+
+  .btn--light {
+    margin-top: 3.2rem;
+    font-size: 1.6rem;
+    color: $dark;
+    background-color: $white;
+    border-radius: 5rem;
+    padding: 1.8rem 4.4rem;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: $main-transition-speed color,
+      $main-transition-speed background-color;
+    &:hover {
+      background-color: $dark;
+      color: $mainColor;
+    }
+  }
+
+  .active {
+    color: $mainColor;
+  }
+}

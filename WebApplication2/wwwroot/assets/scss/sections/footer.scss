@@ -1,0 +1,122 @@
+@mixin footer() {
+  // Footer starts
+  .footer {
+    &__top {
+      background: $white-300;
+      padding: 8rem 0;
+
+      &__left-side {
+        &__title {
+          padding-bottom: 2.8rem;
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: $dark;
+        }
+        &__list {
+          padding-bottom: 1rem;
+          li {
+            @include flex(center);
+            padding: 0.5rem 0;
+            img {
+              height: 2.2rem;
+            }
+            span {
+              margin-left: 0.8rem;
+              transition: $main-transition-speed transform,
+                $main-transition-speed color;
+            }
+            &:not(:last-child) {
+              margin-bottom: 1.5rem;
+            }
+            &:not(:first-child):hover {
+              span:last-child {
+                cursor: pointer;
+                transform: translateX(5%);
+                color: $mainColor;
+              }
+            }
+          }
+        }
+      }
+      &__title {
+        padding-bottom: 2.5rem;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $dark;
+      }
+      &__list {
+        line-height: 1.7;
+        li {
+          @include flex(center);
+          line-height: 1;
+          font-weight: 400;
+          margin-bottom: 1.5rem;
+          cursor: pointer;
+          color: $dark;
+          transition: $main-transition-speed transform,
+            $main-transition-speed color;
+
+          &:hover {
+            color: $mainColor;
+            transform: translateX(5%);
+          }
+        }
+      }
+      .custom-flex {
+        @include flex(center, null, column);
+        @include breakpoint-down("medium") {
+          @include flex(flex-start);
+        }
+        .footer__top__title {
+          margin-right: 2rem;
+        }
+      }
+    }
+
+    &__bottom {
+      background-color: $grey;
+      padding: 2rem 0;
+      line-height: 2.72rem;
+
+      &__copyright {
+        font-size: 1.4rem;
+        order: 0;
+        @include breakpoint-down("medium") {
+          order: 1;
+        }
+        .name {
+          color: $mainColor;
+          cursor: pointer;
+          font-weight: 600;
+        }
+      }
+      &__social-medias {
+        @include flex();
+        gap: 2.4rem;
+        order: 1;
+        @include breakpoint-down("medium") {
+          order: 0;
+        }
+        li {
+          a {
+            color: $dark-100;
+            transition: 300ms color;
+            i {
+              font-size: 1.5rem;
+            }
+            &:hover {
+              color: $mainColor;
+            }
+          }
+        }
+      }
+      &__copyright-socialMedias {
+        @include flex(center, space-between);
+        @include breakpoint-down("medium") {
+          @include flex(justify-content, null, column);
+        }
+        row-gap: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,202 @@
+@import "assets/mixins", "assets/colors", "assets/_forJS";
+
+@include product-details();
+
+.tabs {
+  padding-top: 8rem;
+  ul {
+    @include flex();
+    gap: 0.05rem;
+
+    li {
+      button {
+        background-color: #979898;
+        color: $white;
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0.8rem 1rem;
+        border: 1px solid $white-300;
+        cursor: pointer;
+        transition: 300ms color, 300ms background-color;
+        &:hover {
+          background-color: $white;
+          color: $grey-100;
+        }
+      }
+      .active--tab-link {
+        background-color: $white;
+        color: $grey-100;
+      }
+    }
+  }
+  .tab {
+    border: 1px solid $white-300;
+    color: $grey-100;
+    line-height: 2.72rem;
+    padding: 1.5rem 2rem 2rem;
+  }
+  &__desc {
+    &__product {
+      padding: 2.5rem 0;
+      @include flex();
+      @include breakpoint-down("small") {
+        display: block;
+      }
+
+      &__img-container {
+        width: 30rem;
+        @include breakpoint-down("small") {
+          width: 100%;
+        }
+        img {
+          // max-width: 30rem;
+          width: 100%;
+        }
+      }
+      &__info {
+        margin-left: 4rem;
+        @include breakpoint-down("small") {
+          margin-left: 2rem;
+        }
+        h3 {
+          font-size: 2rem;
+          text-transform: capitalize;
+          font-weight: 500;
+          color: $mainColor;
+          padding-bottom: 1rem;
+          @include breakpoint-down("small") {
+            margin-top: 2rem;
+          }
+        }
+        ul {
+          @include flex(null, null, column);
+          list-style-type: disc;
+          li {
+            padding: 3px 0;
+          }
+        }
+      }
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+  &__information {
+    table {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid $grey;
+      border-collapse: collapse;
+
+      tr {
+        text-transform: capitalize;
+        td {
+          padding: 1.2rem;
+          border: 1px solid $grey;
+        }
+      }
+    }
+  }
+  &__reviews {
+    h5 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      padding-bottom: 2rem;
+      text-transform: capitalize;
+      span {
+        color: $mainColor;
+      }
+    }
+    &__all-reviews {
+      @include flex();
+      color: $grey-100;
+      // &__img-container {
+      // }
+      &__box {
+        border: 1px solid $white-300;
+        margin-left: 10px;
+        border: 1px solid #e5e5e5;
+        padding: 10px;
+        &__ratings {
+          i {
+            font-size: 1.4rem;
+            color: $mainColor;
+          }
+        }
+        &__date {
+          font-size: 1.2rem;
+          padding-bottom: 1rem;
+          p {
+            span {
+              font-size: 1.3rem;
+            }
+          }
+        }
+        p {
+          font-style: italic;
+          font-size: 1.3rem;
+          line-height: 1.7;
+        }
+      }
+    }
+
+    &__submit {
+      padding-top: 4rem;
+      form {
+        div {
+          width: 100%;
+        }
+        label {
+          span {
+            color: crimson;
+          }
+        }
+        input:not([type="radio"]) {
+          width: 100%;
+          padding: 1rem;
+          padding: 0.8rem 0.8rem;
+          margin-bottom: 1rem;
+          line-height: 1.5;
+          color: $grey-100;
+          border: 1px solid #ced4da;
+          border-radius: 0.25rem;
+        }
+        textarea {
+          width: 100%;
+          padding: 1.5rem;
+        }
+        p {
+          margin-bottom: 2rem;
+          span {
+            color: crimson;
+          }
+        }
+        button {
+          margin-top: 2rem;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          font-size: 1.6rem;
+          font-weight: 500;
+          color: $dark;
+        }
+        .radio-box {
+          @include flex(center);
+          gap: 0.8rem;
+        }
+      }
+    }
+  }
+  .tab-hidden {
+    display: none;
+  }
+  .tab-show {
+    display: block;
+  }
+}
+
+.related {
+  padding: 4rem 0 8rem;
+}

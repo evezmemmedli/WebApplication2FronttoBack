@@ -1,0 +1,75 @@
+@import "assets/colors", "assets/mixins";
+
+.contact-area {
+  padding-bottom: 8rem;
+  &__title {
+    padding-bottom: 3rem;
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: $dark;
+    }
+  }
+  &__form {
+    margin-right: 2rem;
+
+    input {
+      width: 100%;
+      border: none;
+      padding: 1.5rem;
+      border-bottom: 3px solid transparent;
+      background-color: $white-100;
+      margin-bottom: 3rem;
+      &::placeholder {
+        color: #999;
+        font-style: italic;
+      }
+    }
+    textarea {
+      height: 15rem;
+      width: 100%;
+      border: none;
+      padding: 10px 10px;
+      border-bottom: 3px solid transparent;
+      background-color: #f3f6f5;
+      margin-bottom: 30px;
+      &::placeholder {
+        color: #999;
+        font-style: italic;
+      }
+    }
+    button {
+      @include main-btn();
+    }
+  }
+
+  &__us {
+    p {
+      padding-bottom: 3rem;
+    }
+    ul {
+      li {
+        line-height: 27.2px;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px $grey solid;
+        color: $dark-100;
+        i {
+          font-size: 1.8rem;
+          margin-right: 1rem;
+        }
+      }
+    }
+    &__working-time {
+      padding-top: 2rem;
+      &__title {
+        font-size: 16px;
+        font-weight: 600;
+        padding-bottom: 1rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

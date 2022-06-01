@@ -1,0 +1,319 @@
+﻿
+@{
+    ViewData["Title"] = "ProductDetail";
+}
+
+  <main>
+
+    <div class="breadcrumb">
+      <div class="custom-container">
+        <h1 class="breadcrumb__title">Shop</h1>
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__list__item">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="breadcrumb__list__item"><a href="shop.html">Shop</a> </li>
+          <li class="breadcrumb__list__item active">Product Details</li>
+
+        </ul>
+
+      </div>
+    </div>
+
+
+    <section class="product">
+      <div class="custom-container">
+        <div class="row" style="row-gap: 1rem;">
+          <div class="col-12 col-lg-5">
+            <div class="product__left-side">
+              <div class="zoom">
+                <img src="assets/images/dragShoes/product-details-img1.jpg" />
+              </div>
+              <div class="thumbs-container">
+                <div>
+                  <img class="thumb" src="assets/images/dragShoes/product-details-img1.jpg">
+                </div>
+                <div>
+                  <img class="thumb" src="assets/images/dragShoes/product-details-img2.jpg">
+                </div>
+                <div>
+                  <img class="thumb" src="assets/images/dragShoes/product-details-img3.jpg">
+                </div>
+                <div>
+                  <img class="thumb" src="assets/images/dragShoes/product-details-img4.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="product__right-side">
+              <div class="product__right-side__text">
+                <h3>Primitive Mens Premium Shoes</h3>
+                <a href="">1 Review(s)</a>
+                <span>$70.00</span> <del>$80.00</del>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+                  labore et dolore magna aliquyam erat, sed diam voluptua.
+                  Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea dictumst. Suspendisse
+                  ultrices mauris diam. Nullam sed aliquet elit. Mauris consequat nisi ut mauris efficitur lacinia.</p>
+              </div>
+
+              <div class="product__right-side__buy">
+                <div class="product__right-side__buy--count">
+                  <span class="count-minus"><i class="fa-solid fa-minus"></i></span>
+                  <span class="count">1</span>
+                  <span class="count-plus"><i class="fa-solid fa-plus"></i></span>
+                </div>
+                <div class="product__right-side__buy--add">
+                  <button>Add to Cart</button>
+                </div>
+              </div>
+              <div class="product__right-side__extra">
+                <div>
+                  <p>Availability:<span>In Stock</span></p>
+                </div>
+                <div>
+                  <p>Share:</p>
+                  <ul>
+                    <li><button><i class="fa-brands fa-facebook-f"></i>
+                      </button></li>
+                    <li><button><i class="fa-brands fa-twitter"></i>
+                      </button></li>
+                    <li><button><i class="fa-brands fa-pinterest"></i>
+                      </button></li>
+                    <li><button><i class="fa-brands fa-google-plus-g"></i>
+                      </button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tabs">
+      <div class="custom-container">
+        <ul>
+          <li><button id="tab-1" class="active--tab-link">Description</button></li>
+          <li><button id="tab-2">Information</button></li>
+          <li><button id="tab-3">Reviews</button></li>
+        </ul>
+        <div id="tab-1-content" class="tab tabs__desc tab-hidden">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor.
+            Ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa
+            massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non
+            neque.</p>
+          <div class="tabs__desc__product">
+            <div class="tabs__desc__product__img-container">
+              <img src="assets/images/services.jpg" alt="product">
+            </div>
+            <div class="tabs__desc__product__info">
+              <h3>Product Information :</h3>
+              <ul>
+                <li>Donec non est at libero vulputate rutrum</li>
+                <li>Morbi ornare lectus quis justo gravida</li>
+                <li>Pellentesque aliquet, sem eget laoreet</li>
+                <li>Donec a neque libero</li>
+                <li>Pellentesque aliquet, sem eget laoreet</li>
+              </ul>
+            </div>
+          </div>
+          <p>Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet
+            ligula euismod eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+            egestas. Nam erat mi, rutrum at sollicitudin rhoncus, ultricies posuere erat. Duis convallis, arcu nec
+            aliquam consequat, purus felis vehicula felis, a dapibus enim lorem nec augue. Nunc facilisis sagittis
+            ullamcorper.</p>
+          <p>Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante
+            ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean eleifend laoreet congue.
+            Vivamus adipiscing nisl ut dolor dignissim semper. Nulla luctus malesuada tincidunt.</p>
+        </div>
+        <div id="tab-2-content" class="tab tabs__information tab-hidden">
+          <table>
+            <tbody>
+              <tr>
+                <td>Color</td>
+                <td>Black, Blue, Red</td>
+              </tr>
+              <tr>
+                <td>Size</td>
+                <td>L, M, S</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="tab-3-content" class="tab tabs__reviews tab-hidden">
+          <h5>1 Review For <span>Chaz Kangeroo Hoodies</span></h5>
+          <div class="tabs__reviews__all-reviews">
+            <div class="tabs__reviews__all-reviews__img-container">
+              <img src="assets/images/avatar.jpg" alt="avatar">
+            </div>
+            <div class="tabs__reviews__all-reviews__box">
+              <div class="tabs__reviews__all-reviews__box__ratings">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="tabs__reviews__all-reviews__box__date">
+                <p><span>Admin</span> - 30 Nov, 2018</p>
+              </div>
+              <p>Aliquam fringilla euismod risus ac bibendum. Sed sit amet sem varius ante feugiat lacinia. Nunc ipsum
+                nulla, vulputate ut venenatis vitae, malesuada ut mi. Quisque iaculis, dui congue placerat pretium,
+                augue erat accumsan lacus</p>
+            </div>
+          </div>
+          <div class="tabs__reviews__submit">
+            <form>
+              <div class="row" style="row-gap: 1.5rem;">
+                <div class="col-12">
+                  <div> <label for="input-name"><span>* </span>Your Name</label>
+                    <input type="text" id="input-name">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div>
+                    <label for="input-email"><span>* </span>Your Email</label>
+                    <input type="email" id="input-email">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div>
+                    <label for="message"><span>* </span>Your Review</label>
+
+                    <textarea type="text" id="message"></textarea>
+                  </div>
+                </div>
+                <p><span>Note:</span> HTML is not translated!</p>
+                <div class="col-12">
+                  <div class="radio-box">
+                    <label for="radiocheck"><span>* </span>Rating</label>
+                    <span style="margin-left:1.5rem">Bad</span>
+                    <input type="radio" name="rating">
+                    <input type="radio" name="rating">
+                    <input type="radio" name="rating">
+                    <input type="radio" name="rating">
+                    <input type="radio" name="rating" checked>
+                    <span>Good</span>
+                  </div>
+
+                </div>
+                <div>
+                  <button>Continue</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="related">
+      <div class="custom-container">
+        <div class="products__title">
+          <h2>Related Product</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+        </div>
+        <div id="related-carousel" class="row owl-carousel owl-theme">
+          <div class="item">
+            <div class="products__cards">
+              <div class="products__cards__card">
+                <div class="products__cards__card__top">
+                  <div class="products__cards__card__top__img">
+                    <img src="assets/images/dragShoes/product-1.jpg" alt="shoe">
+                  </div>
+                </div>
+                <div class="products__cards__card__bottom">
+                  <div class="products__cards__card__bottom__info">
+                    <h5>Leather Mens Slipper</h5>
+                    <span>$80.00</span><del>$70.00</del>
+                  </div>
+                  <div class="products__cards__card__bottom__buttons">
+                    <button class="btn btn__product btn__product--hidden"><i class="fa-solid fa-heart"></i></button>
+                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="btn btn__product btn__product--hidden quick-look"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class=" item">
+            <div class="products__cards">
+              <div class="products__cards__card">
+                <div class="products__cards__card__top">
+                  <div class="products__cards__card__top__img">
+                    <img src="assets/images/dragShoes/product-2.jpg" alt="shoe">
+                  </div>
+                </div>
+                <div class="products__cards__card__bottom">
+                  <div class="products__cards__card__bottom__info">
+                    <h5>Quickiin Mens shoes</h5>
+                    <span>$80.00</span><del>$70.00</del>
+                  </div>
+                  <div class="products__cards__card__bottom__buttons">
+                    <button class="btn btn__product btn__product--hidden "><i class="fa-solid fa-heart"></i></button>
+                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="btn btn__product btn__product--hidden quick-look"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class=" item">
+            <div class="products__cards">
+              <div class="products__cards__card">
+                <div class="products__cards__card__top">
+                  <div class="products__cards__card__top__img">
+                    <img src="assets/images/dragShoes/product-3.jpg" alt="shoe">
+                  </div>
+                </div>
+                <div class="products__cards__card__bottom">
+                  <div class="products__cards__card__bottom__info">
+                    <h5>Rexpo Womens shoes</h5>
+                    <span>$80.00</span><del>$70.00</del>
+                  </div>
+                  <div class="products__cards__card__bottom__buttons">
+                    <button class="btn btn__product btn__product--hidden"><i class="fa-solid fa-heart"></i></button>
+                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="btn btn__product btn__product--hidden quick-look"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="products__cards">
+              <div class="products__cards__card">
+                <div class="products__cards__card__top">
+                  <div class="products__cards__card__top__img">
+                    <img src="assets/images/dragShoes/product-4.jpg" alt="shoe">
+                  </div>
+                </div>
+                <div class="products__cards__card__bottom">
+                  <div class="products__cards__card__bottom__info">
+                    <h5>Primitive Mens shoes</h5>
+                    <span>$80.00</span><del>$70.00</del>
+                  </div>
+                  <div class="products__cards__card__bottom__buttons">
+                    <button class="btn btn__product btn__product--hidden"><i class="fa-solid fa-heart"></i></button>
+                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="btn btn__product btn__product--hidden quick-look"><i
+                        class="fa-solid fa-eye"></i></button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+

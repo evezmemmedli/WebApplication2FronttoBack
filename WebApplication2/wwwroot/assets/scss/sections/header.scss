@@ -1,0 +1,265 @@
+@mixin header() {
+  .header {
+    &__top {
+      @include flex(center, flex-start);
+      background-color: $mainColor;
+      height: 5rem;
+      line-height: 2.72rem;
+      font-size: 1.4rem;
+      color: $white;
+      @include breakpoint-down("medium") {
+        display: none;
+      }
+      &__left {
+        @include flex(center);
+        p {
+          margin: 0;
+        }
+      }
+      &__right {
+        @include flex(center, flex-end);
+        > ul {
+          @include flex();
+          column-gap: 2rem;
+          cursor: pointer;
+          .custom-dropdown {
+            position: relative;
+
+            &__menu {
+              @include nav-dropdown();
+              left: -45%;
+              width: 15rem;
+              font-size: 1.4rem;
+              line-height: 2.4rem;
+              padding: 1.5rem 1.5rem 2rem;
+              li {
+                transition: $main-transition-speed color;
+                &:hover {
+                  color: $mainColor;
+                }
+              }
+            }
+            i {
+              cursor: pointer;
+              margin-left: 0.2rem;
+              font-size: 1rem;
+            }
+            &:first-child {
+              &::after {
+                content: "";
+                padding-right: 1.6rem;
+                border-right: 0.1rem solid $white;
+              }
+            }
+
+            &:hover {
+              .custom-dropdown__menu {
+                opacity: 1;
+                pointer-events: auto;
+                transform: translateY(0%);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      height: 12rem;
+      @include flex(center);
+      @include breakpoint-down("medium") {
+        height: 6rem;
+      }
+      nav {
+        position: relative;
+      }
+
+      &__logo {
+        @include flex(center);
+      }
+
+      &__nav-links {
+        @include breakpoint-down("medium") {
+          display: none;
+        }
+        > ul {
+          @include flex(null, center);
+          font-size: 1.6rem;
+          > li {
+            @include flex(center);
+            line-height: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+
+            a {
+              @include flex(center);
+              color: $dark;
+              transition: $main-transition-speed color;
+              font-weight: 500;
+              padding: 52px 15px;
+            }
+            > .home__dropdown {
+              @include nav-dropdown();
+              width: 22rem;
+
+              > li {
+                @include main-style-a();
+              }
+            }
+            .pages__dropdown {
+              @include flex();
+              @include nav-dropdown();
+              width: 100%;
+              left: 0;
+              > li {
+                flex-basis: 25%;
+                line-height: 1.6rem;
+                padding: 1rem 1.5rem;
+                @include main-style-a();
+                a {
+                  font-size: 1.6rem;
+                  font-weight: 500;
+                  color: $dark;
+                  padding: 0;
+                }
+
+                ul {
+                  cursor: default;
+                  margin-top: 1rem;
+                  li {
+                    padding: 1rem 0;
+                    @include main-style-a();
+                    a {
+                      padding: 0;
+                    }
+                  }
+                }
+              }
+            }
+            .shop__dropdown {
+              @include nav-dropdown();
+              width: 22rem;
+              li {
+                position: relative;
+                @include main-style-a();
+                ul {
+                  @include nav-dropdown();
+                  width: 25rem;
+                  top: 0%;
+                  left: 100%;
+                }
+              }
+            }
+            .blog__dropdown {
+              @include nav-dropdown();
+              li {
+                @include main-style-a();
+              }
+            }
+            i {
+              font-size: 1rem;
+              padding: 0 0.8rem;
+            }
+            &:hover {
+              a {
+                color: $mainColor;
+              }
+
+              ul {
+                opacity: 1;
+                transform: translateY(0%);
+                pointer-events: auto;
+                li {
+                  &:hover {
+                    ul {
+                      opacity: 1;
+                      transform: translateY(0%);
+                      pointer-events: auto;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__config {
+        @include flex(center, flex-end);
+        > ul {
+          @include flex();
+          gap: 2.6rem;
+          > li {
+            @include breakpoint-down("medium") {
+              &:first-child {
+                display: none;
+              }
+
+              &:nth-child(2) {
+                display: none;
+              }
+            }
+            > button {
+              cursor: pointer;
+              position: relative;
+              border: none;
+              background-color: transparent;
+
+              > i {
+                font-size: 2.2rem;
+                transition: $main-transition-speed color;
+
+                &:hover {
+                  color: $mainColor;
+                }
+              }
+
+              span {
+                position: absolute;
+                top: -40%;
+                left: 50%;
+                background-color: $mainColor;
+                color: $white;
+                border-radius: 50%;
+                width: 1.8rem;
+                height: 1.8rem;
+                line-height: 1.8rem;
+                font-size: 1rem;
+              }
+              ul {
+                @include nav-dropdown();
+                width: 15.9rem;
+                left: -630%;
+                text-align: start;
+                li {
+                  font-size: 1.3rem;
+                  font-weight: 400;
+                  padding: 0.5rem 1.5rem;
+                  @include main-style-a();
+                  a {
+                    padding: 0;
+                    font-size: 1.3rem;
+                  }
+                }
+              }
+            }
+            #hamburger {
+              @include breakpoint-up("large") {
+                i {
+                  display: none;
+                }
+              }
+            }
+            &:hover {
+              ul {
+                pointer-events: auto;
+                opacity: 1;
+                transform: translateY(0%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,544 @@
+﻿@*@{
+    List<Slider> sliders = ViewBag.sliders;
+}*@
+@{
+    ViewData["Title"] = "Juan Home Page";
+}
+<!-- Main starts  -->
+<main>
+    <!-- Hero slider section starts -->
+    <section class="hero">
+        <div class="hero__sliders">
+            <div class="custom-container">
+                <div class="hero__sliders__slide">
+                    <div class="owl-carousel owl-theme first-slider">
+                        @{int counter = 0;}
+                        @foreach (Slider slider in Model)
+                        {
+                            counter++;
+                            <div class="item item-@counter" style="background: url(@slider.ImageUrl)">
+                                <div class="hero__sliders__slide__content">
+                                    <h5 class="hero__sliders__slide__content__subtitle">
+                                        @slider.Subtitle
+                                    </h5>
+                                    <h2 class="hero__sliders__slide__content__title">
+                                        @slider.Title
+                                    </h2>
+                                    <p class="hero__sliders__slide__content__text">
+                                        Be bold, be you. Celebrate pride with
+                                        the adidas x Kris Andrew Small collab.
+                                    </p>
+                                    <button class="btn--light">
+                                        <a href="@slider.ButtonAdress" target="_blank">
+                                            Shop Now
+                                        </a></button>
+                                </div>
+                            </div>
+                        }
+                        </div>
+                    </div>
+                    <!-- <button class=" hero__sliders__btn hero__sliders__btn--left"><i class="fa-solid fa-angle-left"></i></button>
+                    <button class=" hero__sliders__btn hero__sliders__btn--right"><i class="fa-solid fa-angle-right"></i></button>
+                    <div class="dots"></div> -->
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+
+    </section>
+    <!-- Hero slider section ends -->
+    <!-- Service policy area section starts -->
+    <section class="service-policy-area">
+        <div class="custom-container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service-policy-area__box bg-antique">
+                        <div class="service-policy-area__box__logo">
+                            <img src="assets/images/policy/policy-1.jpg" alt="policy logo">
+                        </div>
+                        <div class="service-policy-area__box__info ">
+                            <h5>Free Shipping</h5>
+                            <p>Free shipping on all order</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-policy-area__box bg-lightgreen">
+                        <div class="service-policy-area__box__logo">
+                            <img src="assets/images/policy/policy-2.jpg" alt="policy logo">
+                        </div>
+                        <div class="service-policy-area__box__info">
+                            <h5>ONLINE SUPPORT</h5>
+                            <p>Online support 24 hours a day</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-policy-area__box bg-lightpurple">
+                        <div class="service-policy-area__box__logo">
+                            <img src="assets/images/policy/policy-3.jpg" alt="policy logo">
+                        </div>
+                        <div class="service-policy-area__box__info">
+                            <h5>MONEY RETURN</h5>
+                            <p>Back guarantee under 5 days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Service policy area section ends -->
+    <!-- Product section starts -->
+    <section class="products">
+        <div class="custom-container">
+            <div class="products__title">
+                <h2>Our Product</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+            </div>
+            <div id="product-carousel" class="row owl-carousel owl-theme">
+                <div class="item">
+                    <div class="products__cards">
+                        <div class="products__cards__card">
+                            <div class="products__cards__card__top">
+                                <div class="products__cards__card__top__img">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/dragShoes/product-1.jpg" alt="shoe">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="products__cards__card__bottom">
+                                <div class="products__cards__card__bottom__info">
+                                    <h5>Leather Mens Slipper</h5>
+                                    <span>$80.00</span><del>$70.00</del>
+                                </div>
+                                <div class="products__cards__card__bottom__buttons">
+                                    <button class="btn btn__product btn__product--hidden"><i class="fa-solid fa-heart"></i></button>
+                                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                                    <button class="btn btn__product btn__product--hidden quick-look">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class=" item">
+                    <div class="products__cards">
+                        <div class="products__cards__card">
+                            <div class="products__cards__card__top">
+                                <div class="products__cards__card__top__img">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/dragShoes/product-2.jpg" alt="shoe">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="products__cards__card__bottom">
+                                <div class="products__cards__card__bottom__info">
+                                    <h5>Quickiin Mens shoes</h5>
+                                    <span>$80.00</span><del>$70.00</del>
+                                </div>
+                                <div class="products__cards__card__bottom__buttons">
+                                    <button class="btn btn__product btn__product--hidden "><i class="fa-solid fa-heart"></i></button>
+                                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                                    <button class="btn btn__product btn__product--hidden quick-look">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class=" item">
+                    <div class="products__cards">
+                        <div class="products__cards__card">
+                            <div class="products__cards__card__top">
+                                <div class="products__cards__card__top__img">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/dragShoes/product-3.jpg" alt="shoe">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="products__cards__card__bottom">
+                                <div class="products__cards__card__bottom__info">
+                                    <h5>Rexpo Womens shoes</h5>
+                                    <span>$80.00</span><del>$70.00</del>
+                                </div>
+                                <div class="products__cards__card__bottom__buttons">
+                                    <button class="btn btn__product btn__product--hidden"><i class="fa-solid fa-heart"></i></button>
+                                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                                    <button class="btn btn__product btn__product--hidden quick-look">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="products__cards">
+                        <div class="products__cards__card">
+                            <div class="products__cards__card__top">
+                                <div class="products__cards__card__top__img">
+                                    <a href="product-details.html">
+                                        <img src="assets/images/dragShoes/product-4.jpg" alt="shoe">
+
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="products__cards__card__bottom">
+                                <div class="products__cards__card__bottom__info">
+                                    <h5>Primitive Mens shoes</h5>
+                                    <span>$80.00</span><del>$70.00</del>
+                                </div>
+                                <div class="products__cards__card__bottom__buttons">
+                                    <button class="btn btn__product btn__product--hidden"><i class="fa-solid fa-heart"></i></button>
+                                    <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                                    <button class="btn btn__product btn__product--hidden quick-look">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product section ends -->
+    <!--Banner sale aside starts -->
+    <aside class="banner-sale">
+        <div class="custom-container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-sale__left-side">
+                        <div class="background">
+                            <img src="assets/images/banner/banner-1.jpg" alt="">
+                        </div>
+                        <div class="banner-sale__left-side__text">
+                            <!-- <div class="banner-sale__left-side__text__title"> -->
+                            <h5>Sports Shoes</h5>
+                            <!-- </div> -->
+                            <!-- <div class="banner-sale__left-side__text__subtitle"> -->
+                            <h3>
+                                20% Off
+                                <br>
+                                For Sports men
+                            </h3>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="banner-sale__right-side">
+                        <div class="background">
+                            <img src="assets/images/banner/banner-2.jpg" alt="">
+                        </div>
+                        <div class="banner-sale__right-side__text">
+                            <!-- <div class="banner-sale__left-side__text__title"> -->
+                            <h5>Sports Shoes</h5>
+                            <!-- </div> -->
+                            <!-- <div class="banner-sale__left-side__text__subtitle"> -->
+                            <h3>
+                                20% Off
+                                <br>
+                                For Sports men
+                            </h3>
+                            <!-- </div> -->
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </aside>
+    <!--Banner sale aside ends -->
+    <!-- Top seller section starts -->
+
+    <section class="top-seller">
+        <div class="custom-container">
+            <div class="top-seller__title">
+                <h2>Top Seller</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+            </div>
+            <div class="top-seller__products">
+                <div class="row">
+                    <div class=" col-12 col-md-5 col-lg-4">
+                        <div class="top-seller__products__img-container">
+                            <a href="product-details.html">
+                                <img src="assets/images/banner/banner-3.jpg" alt="">
+
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7 col-lg-8">
+                        <div class="top-seller__products__sliders">
+                            <div>
+                                <div id="top-seller-carousel" class="row owl-carousel owl-theme">
+                                    <div>
+                                        <div class="item custom-padding">
+                                            <div class="top-seller__products__sliders__slider">
+                                                <div class="top-seller__products__sliders__slider__left-side">
+                                                    <div class="top-seller__products__sliders__slider__left-side__img-container">
+                                                        <a href="product-details.html">
+                                                            <img src="assets/images/small/pro-small-1.jpg" alt="Quickiin shoe">
+
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="top-seller__products__sliders__slider__right-side">
+                                                    <div class="top-seller__products__sliders__slider__right-side__title">
+                                                        <h5>Simple Fabric Shoe</h5>
+                                                        <span>$80.00</span> <del>$70.00</del>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__reviews">
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__buttons">
+                                                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                                                        <button class="btn "><i class="fa-solid fa-basket-shopping"></i></button>
+                                                        <button class="btn quick-look"><i class="fa-regular fa-eye"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="item">
+                                            <div class="top-seller__products__sliders__slider">
+                                                <div class="top-seller__products__sliders__slider__left-side">
+                                                    <div class="top-seller__products__sliders__slider__left-side__img-container">
+                                                        <a href="product-details.html">
+                                                            <img src="assets/images/small/pro-small-3.jpg" alt="Quickiin shoe">
+
+                                                        </a>
+                                                    </div>
+
+                                                </div>
+                                                <div class="top-seller__products__sliders__slider__right-side">
+                                                    <div class="top-seller__products__sliders__slider__right-side__title">
+                                                        <h5>Quickiin Mens shoes</h5>
+                                                        <span>$80.00</span> <del>$70.00</del>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__reviews">
+                                                        <!-- bunlara js da hover edende ichi dolsun -->
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__buttons">
+                                                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                                                        <button class="btn "><i class="fa-solid fa-basket-shopping"></i></button>
+                                                        <button class="btn quick-look"><i class="fa-regular fa-eye"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="item custom-padding">
+                                            <div class="top-seller__products__sliders__slider">
+                                                <div class="top-seller__products__sliders__slider__left-side">
+                                                    <div class="top-seller__products__sliders__slider__left-side__img-container">
+                                                        <a href="product-details.html">
+                                                            <img src="assets/images/small/pro-small-2.jpg" alt="Quickiin shoe">
+
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="top-seller__products__sliders__slider__right-side">
+                                                    <div class="top-seller__products__sliders__slider__right-side__title">
+                                                        <h5>Exclusive Mens Shoe</h5>
+                                                        <span>$80.00</span> <del>$70.00</del>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__reviews">
+
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__buttons">
+                                                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                                                        <button class="btn "><i class="fa-solid fa-basket-shopping"></i></button>
+                                                        <button class="btn quick-look"><i class="fa-regular fa-eye"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="top-seller__products__sliders__slider">
+                                                <div class="top-seller__products__sliders__slider__left-side">
+                                                    <div class="top-seller__products__sliders__slider__left-side__img-container">
+                                                        <a href="product-details.html">
+                                                            <img src="assets/images/small/pro-small-4.jpg" alt="Quickiin shoe">
+
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="top-seller__products__sliders__slider__right-side">
+                                                    <div class="top-seller__products__sliders__slider__right-side__title">
+                                                        <h5>Primitive Men Shoes</h5>
+                                                        <span>$80.00</span> <del>$70.00</del>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__reviews">
+
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                        <i class="fa-regular fa-star"></i>
+                                                    </div>
+                                                    <div class="top-seller__products__sliders__slider__right-side__buttons">
+                                                        <button class="btn"><i class="fa-regular fa-heart"></i></button>
+                                                        <button class="btn "><i class="fa-solid fa-basket-shopping"></i></button>
+                                                        <button class="btn quick-look"><i class="fa-regular fa-eye"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Top seller section ends -->
+    <!-- Blog section starts -->
+
+    <section class="blog">
+        <div class="custom-container">
+            <div class="blog__title">
+                <h2>Our Blog</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing</p>
+            </div>
+
+            <div class="blog__cards">
+                <div id="blog-carousel" class="row owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="blog__cards__card">
+                            <div class="blog__cards__card__img-container">
+                                <a href="blog-details.html">
+                                    <img src="assets/images/dragShoes/blog-1.jpg" alt="shoe">
+
+                                </a>
+                            </div>
+                            <div class="blog__cards__card__text">
+                                <div class="blog__cards__card__text__title">
+                                    <h5><a href="">Celebrity Daughter Opens About to Having Her Eye color</a></h5>
+                                </div>
+                                <div class="blog__cards__card__text__date">
+                                    <span>By:</span>
+                                    <span>Admin,</span>
+                                    <span>On:</span>
+                                    <span>14.07.2029</span>
+                                </div>
+                                <a href="" class="blog__cards__card__text__link">Read More...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="blog__cards__card">
+                            <div class="blog__cards__card__img-container">
+                                <a href="blog-details.html">
+                                    <img src="assets/images/dragShoes/blog-2.jpg" alt="shoe">
+
+                                </a>
+                            </div>
+                            <div class="blog__cards__card__text">
+                                <div class="blog__cards__card__text__title">
+                                    <h5><a href="">Sotto Winner Offering Money To Any Man That Will Date Her</a></h5>
+                                </div>
+                                <div class="blog__cards__card__text__date">
+                                    <span>By:</span>
+                                    <span>Admin,</span>
+                                    <span>On:</span>
+                                    <span>14.07.2029</span>
+                                </div>
+                                <a href="" class="blog__cards__card__text__link">Read More...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  ">
+                        <div class="blog__cards__card">
+                            <div class="blog__cards__card__img-container">
+                                <a href="blog-details.html">
+                                    <img src="assets/images/dragShoes/blog-3.jpg" alt="shoe">
+
+                                </a>
+                            </div>
+                            <div class="blog__cards__card__text">
+                                <div class="blog__cards__card__text__title">
+                                    <h5><a href="">Children Left Home Alone For 4 Days In TV Series Experiment</a></h5>
+                                </div>
+                                <div class="blog__cards__card__text__date">
+                                    <span>By:</span>
+                                    <span>Admin,</span>
+                                    <span>On:</span>
+                                    <span>14.07.2029</span>
+                                </div>
+                                <a href="" class="blog__cards__card__text__link">Read More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog section ends -->
+    <!-- Brands aside  start -->
+    <aside class="brands">
+        <div class="custom-container">
+            <div id="brand-carousel" class="row owl-carousel owl-theme">
+                <div class="item custom-flex">
+                    <div class="brands__brand">
+                        <img src="assets/images/brands/br1.jpg" alt="brand logo">
+                    </div>
+                </div>
+                <div class="item custom-flex">
+                    <div class="brands__brand">
+                        <img src="assets/images/brands/br2.jpg" alt="brand logo">
+                    </div>
+                </div>
+                <div class="item custom-flex">
+                    <div class="brands__brand">
+                        <img src="assets/images/brands/br3.jpg" alt="brand logo">
+                    </div>
+                </div>
+                <div class="item custom-flex">
+                    <div class="brands__brand">
+                        <img src="assets/images/brands/br4.jpg" alt="brand logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- Brands aside  ends -->
+
+</main>
+<!-- Main ends -->

@@ -1,0 +1,72 @@
+@import "assets/mixins", "assets/colors";
+
+.breadcrumb {
+  background-color: $white-100;
+  padding: 5.5rem 0 6rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  &__title {
+    font-size: 2.4rem;
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $dark;
+  }
+  &__list {
+    @include flex(null, center);
+    gap: 1rem;
+    &__item {
+      font-weight: 400;
+      font-size: 1.5rem;
+      a {
+        color: $dark;
+        transition: $main-transition-speed color;
+        &:hover {
+          color: $mainColor;
+        }
+      }
+      &:not(:last-child)::after {
+        content: "/";
+        margin-left: 0.4rem;
+      }
+    }
+  }
+}
+
+.pagination {
+  padding: 2rem 0 1.8rem;
+  margin-top: 3rem;
+  margin-bottom: 8rem;
+  border: 1px solid $grey;
+  &__area {
+    &__list {
+      @include flex(center, center);
+      gap: 1rem;
+
+      &__item {
+        border: 1px solid $grey;
+        border-radius: 0.4rem;
+        transition: $main-transition-speed background-color;
+
+        a {
+          display: inline-block;
+          padding: 1rem 1.6rem;
+          color: $dark;
+          transition: $main-transition-speed color;
+          &:hover {
+            color: $white;
+          }
+        }
+        &:hover {
+          background-color: $mainColor;
+        }
+      }
+      .active--blog-link {
+        background-color: $mainColor;
+        a {
+          color: $white;
+        }
+      }
+    }
+  }
+}

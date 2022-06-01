@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<main>
+
+    <div class="breadcrumb">
+      <div class="custom-container">
+        <h1 class="breadcrumb__title">Cart</h1>
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__list__item">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="breadcrumb__list__item active">Cart</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <section class="cart">
+      <div class="custom-container">
+        <div id="custom-scroll">
+          <table class="cart__table">
+            <thead class="cart__table__header">
+
+              <tr>
+                <th class="cart__table__img-container">Thumbnail</th>
+                <th class="cart__table__title">PRODUCT</th>
+                <th class="cart__table__price">PRICE</th>
+                <th class="cart__table__count">QUANTITY</th>
+                <th class="cart__table__total">TOTAL</th>
+                <th class="cart__table__remove">Remove</th>
+              </tr>
+
+            </thead>
+            <tbody class="cart__table__body">
+              <!-- <tr>
+                <td class="cart__table__img-container">
+                <img src="assets/images/dragShoes/product-4.jpg" alt="">
+            </td>
+            <td class="cart__table__title">
+                <span>Remux Womens shoes</span>
+            </td>
+            <td class="cart__table__price">
+                $45.00
+            </td>
+            <td class="cart__table__count">
+              
+                <div class="cart__table__count__btns">
+                <button class="cart__table__count__btns--minus">-</button>
+                <span class="cart__table__count__btns--result">1</span>
+                <button class="cart__table__count__btns--plus">+</button>
+                </div>
+               
+                
+            </td>
+            <td class="cart__table__total">
+                $50.00
+            </td>
+            <td class="cart__table__remove"><i class="fa-regular fa-trash-can"></i></td>
+            </tr> -->
+              <!-- <tr><td class="cart__table__img-container">
+                <img src="assets/images/dragShoes/product-4.jpg" alt="">
+            </td>
+            <td class="cart__table__title">
+                <span>Remux Womens shoes</span>
+            </td>
+            <td class="cart__table__price">
+                $45.00
+            </td>
+            <td class="cart__table__count">
+                <div class="cart__table__count__btns">
+                <span class="cart__table__count__btns--minus">-</span>
+                <span class="cart__table__count__btns--result">1</span>
+                <span class="cart__table__count__btns--plus">+</span>
+                </div>
+               
+                
+            </td>
+            <td class="cart__table__total">
+                $50.00
+            </td>
+            <td class="cart__table__remove"><i class="fa-regular fa-trash-can"></i></td></tr>  -->
+
+            </tbody>
+
+          </table>
+        </div>
+        <div class="cart__bottom">
+          <div class="cart__bottom__coupon">
+            <form class="cart__bottom__coupon__form">
+              <input type="text" class="cart__bottom__coupon__form__input" placeholder="Enter Your Coupon Code">
+              <button class="cart__bottom__coupon__form__btn">
+                Apply Coupon
+              </button>
+            </form>
+          </div>
+          <div class="cart__bottom__update">
+            <button class="cart__bottom__update__btn">
+              <a href="cart.html"> Update Cart</a>
+
+            </button>
+          </div>
+        </div>
+
+
+        <div class="cart__totals__wrapper">
+          <div class="col-12 col-lg-5">
+            <div class="cart__totals">
+              <h3 class="cart__totals__title">Cart Totals</h3>
+              <table class="cart__totals__table">
+                <tbody>
+                  <tr>
+                    <td>Sub Total</td>
+                    <td id="sub-total-cost">$0</td>
+                  </tr>
+                  <tr>
+                    <td>Shipping</td>
+                    <td id="shipping-cost">$0</td>
+                  </tr>
+                  <tr class="cart__totals__table__total">
+                    <td>Total</td>
+                    <td id="total-cost">$0</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button id="proceed-checkout" class="cart__totals__btn">Proceed Checkout</button>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </section>
+
+  </main>
+

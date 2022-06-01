@@ -1,0 +1,799 @@
+﻿
+@{
+    ViewData["Title"] = "Shop";
+}
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="~/assets/shop/main.css" />
+    
+</head>
+<main>
+
+    <div class="breadcrumb">
+      <div class="custom-container">
+        <h1 class="breadcrumb__title">Shop</h1>
+        <ul class="breadcrumb__list">
+          <li class="breadcrumb__list__item">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="breadcrumb__list__item active">Shop</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <section class="shop">
+      <div class="custom-container">
+        <div class="row">
+          <div class="col-lg-3 shop__custom__order--1">
+            <div class="shop__sidebar">
+              <div class="shop__sidebar__title">
+                <h3>Categories</h3>
+              </div>
+              <div class="shop__sidebar__body">
+                <ul>
+                  <li>
+                    <a href="">Mens</a>
+                    <span>(10)</span>
+                  </li>
+                  <li>
+                    <a href="">Womens</a>
+                    <span>(05)</span>
+                  </li>
+                  <li>
+                    <a href="">Sports</a>
+                    <span>(15)</span>
+                  </li>
+                  <li>
+                    <a href="">Fabric</a>
+                    <span>(12)</span>
+                  </li>
+                  <li>
+                    <a href="">Leather</a>
+                    <span>(20)</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="shop__sidebar__title">
+                <h3>Filter By Price</h3>
+              </div>
+              <div class="shop__sidebar__body">
+
+                <div class="slider">
+                  <div class="progress"></div>
+                </div>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="20" max="400" value="20" step="1">
+                  <input type="range" class="range-max" min="20" max="400" value="400" step="1">
+                </div>
+                <div class="price-input">
+                  <div class="field">
+                    <span id="price">Price:</span>
+                    <div>
+                      <span>$</span>
+                      <input type="number" class="input-min" value="20">
+                    </div>
+
+                  </div>
+                  <div class="separator">-</div>
+                  <div class="field">
+                    <span>$</span>
+                    <input type="number" class="input-max" value="400">
+                  </div>
+                </div>
+                <button class="btn btn--sidebar">Filter</button>
+              </div>
+
+              <div class="shop__sidebar__title">
+                <h3>Color</h3>
+              </div>
+              <div class="shop__sidebar__body">
+                <ul>
+                  <li>
+                    <a href="">Gold</a>
+                    <span>(05)</span>
+                  </li>
+                  <li>
+                    <a href="">Green</a>
+                    <span>(12)</span>
+                  </li>
+                  <li>
+                    <a href="">Blue</a>
+                    <span>(14)</span>
+                  </li>
+                  <li>
+                    <a href="">White</a>
+                    <span>(20)</span>
+                  </li>
+                  <li>
+                    <a href="">Red</a>
+                    <span>(08)</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="shop__sidebar__title">
+                <h3>Size</h3>
+              </div>
+              <div class="shop__sidebar__body">
+                <ul>
+                  <li>
+                    <a href="">L</a>
+                    <span>(05)</span>
+                  </li>
+                  <li>
+                    <a href="">M</a>
+                    <span>(06)</span>
+                  </li>
+                  <li>
+                    <a href="">S</a>
+                    <span>(02)</span>
+                  </li>
+                  <li>
+                    <a href="">XL</a>
+                    <span>(01)</span>
+                  </li>
+
+                </ul>
+
+              </div>
+              <div class="shop__sidebar__bannerSale">
+                <img src="~/assets/images/banner/banner_left.jpg" alt="sale">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 shop__custom__order--2">
+            <div class="shop__products">
+              <div class="shop__products__top-bar">
+                <div class="row" style="row-gap: 2rem;">
+                  <div class="col-md-2 col-lg-2 shop__custom__order--1">
+                    <div class="shop__products__top-bar__sort-buttons">
+                      <button id="grid-sort" class="btn">
+                        <i class="fa-solid fa-grip-vertical"></i>
+                      </button>
+                      <button id="list-sort" class="btn"><i class="fa fa-list"></i></button>
+
+                    </div>
+                  </div>
+                  <div class="col-md-10 col-lg-10 shop__custom__order--2">
+                    <div class="shop__products__top-bar__sort-info">
+                      <div class="shop__products__top-bar__sort-info__left-side">
+                        <p>Sort By :</p>
+                        <form class="shop__products__top-bar__sort-info__left-side__form">
+
+                          <ul class="select">
+                            <li>
+                              <input class="select_close" type="radio" name="awesomeness" id="awesomeness-close"
+                                value="" />
+                              <span class="select_label select_label-placeholder">Relevance</span>
+                            </li>
+
+                            <li class="select_items">
+                              <input class="select_expand" type="radio" name="awesomeness" id="awesomeness-opener" />
+                              <label class="select_closeLabel" for="awesomeness-close"></label>
+
+                              <ul class="select_options">
+
+                                <li class="select_option">
+                                  <input class="select_input" type="radio" name="awesomeness"
+                                    id="awesomeness-ridiculous" />
+                                  <label class="select_label" for="awesomeness-ridiculous">Name (A-Z)</label>
+                                </li>
+
+                                <li class="select_option">
+                                  <input class="select_input" type="radio" name="awesomeness"
+                                    id="awesomeness-reasonable" />
+                                  <label class="select_label" for="awesomeness-reasonable">Name (Z-A)</label>
+                                </li>
+
+                                <li class="select_option">
+                                  <input class="select_input" type="radio" name="awesomeness"
+                                    id="awesomeness-lacking" />
+                                  <label class="select_label" for="awesomeness-lacking">Price (Low > High)</label>
+                                </li>
+
+                                <li class="select_option">
+                                  <input class="select_input" type="radio" name="awesomeness"
+                                    id="awesomeness-awesomeless" />
+                                  <label class="select_label" for="awesomeness-awesomeless">Rating (Lowest)</label>
+                                </li>
+                                <li class="select_option">
+                                  <input class="select_input" type="radio" name="awesomeness"
+                                    id="awesomeness-awesomeless" />
+                                  <label class="select_label" for="awesomeness-awesomeless">Model (A-Z)</label>
+                                </li>
+                                <li class="select_option">
+                                  <input class="select_input" type="radio" name="awesomeness"
+                                    id="awesomeness-awesomeless" />
+                                  <label class="select_label" for="awesomeness-awesomeless">Model (Z-A)</label>
+                                </li>
+                              </ul>
+
+                              <label class="select_expandLabel" for="awesomeness-opener"></label>
+                            </li>
+                          </ul>
+                        </form>
+                      </div>
+                      <div class="shop__products__top-bar__sort-info__right-side">
+                        <p>Showing 1–16 of 21 results</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="shop__products__cards">
+                <div class="row">
+                  <div id="cards--1" style="display: flex; flex-wrap: wrap; ">
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-1.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Leather Mens Slipper</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card ">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-2.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Quickiin Mens shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden "><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-3.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Rexpo Womens shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-4.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Primitive Mens shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-3.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Rexpo Womens shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-6.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Quickiin Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-7.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Primitive Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-8.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Leather Mens Slipper</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-9.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Rexpo Womens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-10.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Rexpo Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-11.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Rexpo Womens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 scale-animation" id="mycol">
+                      <div class="products__cards">
+                        <div class="products__cards__card">
+                          <div class="products__cards__card__top">
+                            <div class="products__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-12.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__cards__card__bottom">
+                            <div class="products__cards__card__bottom__info">
+                              <h5>Primitive Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                            </div>
+                            <div class="products__cards__card__bottom__buttons">
+                              <button class="btn btn__product btn__product--hidden"><i
+                                  class="fa-solid fa-heart"></i></button>
+                              <button class="btn btn__product"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn btn__product btn__product--hidden quick-look"><i
+                                  class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="cards--2">
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-1.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Leather Mens Slipper</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-2.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Quickiin Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-3.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Rexpo Womens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-4.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Primitive Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-6.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Quickiin Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-7.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Primitive Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-8.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Leather Mens Slipper</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-9.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Rexpo Womens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                      <div class="products__full__cards">
+                        <div class="products__full__cards__card">
+                          <div class="products__full__cards__card__top">
+                            <div class="products__full__cards__card__top__img">
+                              <img src="~/assets/images/dragShoes/product-10.jpg" alt="shoe">
+                            </div>
+                          </div>
+                          <div class="products__full__cards__card__bottom">
+                            <div class="products__full__cards__card__bottom__info">
+                              <h5>Quickiin Mens Shoes</h5>
+                              <span>$80.00</span><del>$70.00</del>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere metus vitae arcu
+                                imperdiet, id aliquet ante scelerisque. Sed sit amet sem vitae urna fringilla tempus.
+                              </p>
+                            </div>
+                            <div class="products__full__cards__card__bottom__buttons">
+                              <button class="btn"><i class="fa-solid fa-heart"></i></button>
+                              <button class="btn"><i class="fa-solid fa-basket-shopping"></i></button>
+                              <button class="btn quick-look"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- Pagination aside  start -->
+            <aside class="pagination custom-container">
+              <div class="pagination__area">
+                <ul class="pagination__area__list">
+                  <li class="pagination__area__list__item">
+                    <a href=""><i class="fa-solid fa-angle-left"></i></a>
+
+                  </li>
+                  <li class="pagination__area__list__item active--blog-link"><a href="">1</a></li>
+                  <li class="pagination__area__list__item"><a href="">2</a></li>
+                  <li class="pagination__area__list__item"><a href="">3</a></li>
+                  <li class="pagination__area__list__item">
+                    <a href=""><i class="fa-solid fa-angle-right"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+            <!-- Pagination aside  ends -->
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+
+
+
+  </main>
+

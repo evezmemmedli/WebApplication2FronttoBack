@@ -1,0 +1,682 @@
+@import "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
+@import "assets/mixins", "assets/_medias", "assets/colors", "assets/_forJS";
+@import "./sections/header.scss", "./sections/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+// Globals start
+@include globals();
+// Globals end
+
+// Header starts
+@include header();
+// Header ends
+
+// Hero section starts
+.hero {
+  max-height: 47rem;
+  @include flex();
+
+  &__sliders {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+    &__slide {
+      @include flex(center);
+      width: 100%;
+      height: 100%;
+
+      .item-1 {
+        background: url(https://htmldemo.net/juan/juan/assets/img/slider/slider-1.jpg)
+          center/cover no-repeat;
+        width: 100%;
+        height: 47rem;
+        position: relative;
+      }
+      .item-2 {
+        background: url(https://htmldemo.net/juan/juan/assets/img/slider/slider-2.jpg)
+          center/cover no-repeat;
+        width: 100%;
+        height: 47rem;
+      }
+
+      &__content {
+        max-width: 40rem;
+        position: relative;
+        margin: 0 10rem;
+        color: $white;
+        top: 25%;
+        @include breakpoint-down("medium") {
+          max-width: 35rem;
+          margin: 0 3rem;
+        }
+
+        &__subtitle {
+          font-size: 1.8rem;
+          font-weight: 500;
+          line-height: 2.34rem;
+        }
+        &__title {
+          font-size: 5rem;
+          font-weight: 600;
+          line-height: 7rem;
+          @include breakpoint-down("medium") {
+            font-size: 3rem;
+          }
+        }
+        &__text {
+          line-height: 2.72rem;
+        }
+      }
+      .owl-dots {
+        display: none;
+      }
+      @include breakpoint-down("medium") {
+        .owl-dots {
+          @include flex();
+          position: absolute;
+          bottom: 5%;
+          left: 50%;
+          transform: translateX(-50%);
+
+          & .owl-dot {
+            span {
+              border: none;
+              background-color: #e7e7e7;
+              height: 0.6rem;
+              width: 3rem;
+              border-radius: 10px;
+              margin-right: 1rem;
+              cursor: pointer;
+              transition: all $main-transition-speed;
+            }
+            &:last-child {
+              span {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        .owl-drag .owl-dots .active {
+          span {
+            background-color: $mainColor;
+          }
+        }
+      }
+
+      .owl-next,
+      .owl-prev {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .owl-carousel:hover .owl-next,
+      .owl-carousel:hover .owl-prev {
+        position: absolute;
+        top: 50%;
+        z-index: 1000;
+        opacity: 1;
+        visibility: visible;
+        border: none;
+        background: rgba(255, 255, 255, 0.7);
+        color: $dark;
+        height: 4.6rem;
+        width: 4.6rem;
+        font-size: 3rem;
+        cursor: pointer;
+        transition: $main-transition-speed color,
+          $main-transition-speed background-color;
+
+        &:hover {
+          background-color: $mainColor;
+          color: $white;
+        }
+
+        @include breakpoint-down("medium") {
+          display: none;
+        }
+      }
+      .owl-prev {
+        left: 3%;
+        transform: translate(-50%, -50%);
+      }
+      .owl-next {
+        right: 3%;
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+}
+// Hero section ends
+
+// Service policy section starts
+.service-policy-area {
+  &__box {
+    @include flex();
+    width: 37rem;
+    min-height: 11.1rem;
+    width: 100%;
+    color: $dark-100;
+    line-height: 2.72rem;
+    margin-top: 3rem;
+    padding: 3rem;
+    @include breakpoint-down("medium") {
+      @include flex(center, null, column);
+      text-align: center;
+    }
+    &__info {
+      margin-left: 1rem;
+      h5 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-bottom: 0.5rem;
+      }
+      p {
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .bg-antique {
+    background-color: #fcedda;
+  }
+  .bg-lightgreen {
+    background-color: #f2fbcb;
+  }
+  .bg-lightpurple {
+    background-color: #f7d8f9;
+  }
+}
+// Service policy section ends
+
+// Products section starts
+.products {
+  &__title {
+    @include main-title();
+  }
+  &__cards {
+    padding: 3rem 0.8rem;
+
+    &__card {
+      width: 100%;
+      border: 1px solid $grey;
+      border-radius: 0.4rem;
+      transition: $main-transition-speed border;
+      &__top {
+        overflow: hidden;
+        &__img {
+          cursor: pointer;
+          @include breakpoint-down("medium") {
+            @include flex(null, center);
+            img {
+              width: 20rem;
+            }
+          }
+          img {
+            width: 100%;
+            transition: $main-transition-speed transform;
+          }
+        }
+      }
+
+      .products__cards__card__bottom {
+        text-align: center;
+        &__info {
+          color: $dark;
+
+          h5 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: $main-transition-speed color;
+            &:hover {
+              color: $mainColor;
+            }
+          }
+          span {
+            font-size: 1.8rem;
+            margin-right: 0.4rem;
+          }
+          del {
+            font-size: 1.6rem;
+          }
+        }
+        &__buttons {
+          transform: translateY(50%);
+          @include flex(null, center);
+          gap: 2rem;
+          .btn__product {
+            border-radius: 50%;
+            border: 1px solid $mainColor;
+            background-color: $white;
+            color: $mainColor;
+            cursor: pointer;
+            transition: 600ms all;
+            font-size: 1.6rem;
+            &:hover {
+              background-color: $mainColor;
+              color: $white;
+            }
+          }
+          .btn__product--hidden {
+            &:first-child {
+              opacity: 0;
+              visibility: hidden;
+              transform: translateX(150%);
+            }
+            &:last-child {
+              opacity: 0;
+              visibility: hidden;
+              transform: translateX(-150%);
+            }
+          }
+        }
+      }
+
+      &:hover {
+        border: 1px solid $mainColor;
+        .btn__product--hidden {
+          &:first-child {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+          }
+          &:last-child {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+          }
+        }
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
+// Products section ends
+
+// Banner sale section starts
+.banner-sale {
+  margin-top: 10.4rem;
+
+  .col-lg-6 {
+    padding: 0;
+  }
+  &__left-side {
+    position: relative;
+    overflow: hidden;
+    height: 25rem;
+    transition: $main-transition-speed transform;
+    @include breakpoint-down("medium") {
+      margin-bottom: 2.5rem;
+    }
+    &__text {
+      position: relative;
+      top: 19%;
+      color: $white;
+      z-index: 1;
+      cursor: pointer;
+      h5 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-bottom: 1.4rem;
+        @include moveToRightLeft();
+      }
+      h3 {
+        font-size: 3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        @include moveToLeftRight();
+      }
+    }
+
+    // added this so when I use scale it doesn't scale with the text
+    .background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      transition: all 300ms ease-in-out;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &:hover {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+      .background {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__right-side {
+    overflow: hidden;
+    height: 25rem;
+    position: relative;
+    cursor: pointer;
+    transition: $main-transition-speed transform;
+    &__text {
+      position: relative;
+      z-index: 1;
+      cursor: default;
+      color: $white;
+      top: 19%;
+      h5 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-bottom: 1.4rem;
+        @include moveToRightLeft();
+      }
+      h3 {
+        font-size: 3rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        @include moveToLeftRight();
+      }
+    }
+
+    .background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      transition: all 300ms ease-in-out;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &:hover {
+      .background {
+        transform: scale(1.1);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+    }
+  }
+}
+// Banner sale section starts
+
+// Top seller section starts
+.top-seller {
+  &__title {
+    @include main-title();
+  }
+  &__products {
+    &__img-container {
+      width: 100%;
+      @include breakpoint-down("medium") {
+        width: 27rem;
+      }
+
+      @include breakpoint-down("small") {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+      img {
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+    &__sliders {
+      height: 100%;
+      padding-left: 1.2rem;
+      @include breakpoint-down("medium") {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      .custom-padding {
+        padding-bottom: 3rem;
+      }
+      .row {
+        row-gap: 2rem;
+      }
+      &__slider {
+        @include flex();
+        height: 100%;
+        @include breakpoint-down("small") {
+          flex-direction: column;
+        }
+        &:hover {
+          .top-seller__products__sliders__slider__left-side {
+            img {
+              transform: scale(1.2);
+            }
+          }
+        }
+        &__left-side {
+          overflow: hidden;
+          &__img-container {
+            @include breakpoint-down("medium") {
+              width: 18rem;
+            }
+            @include breakpoint-down("small") {
+              width: 100%;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              cursor: pointer;
+              transition: $main-transition-speed transform;
+            }
+          }
+        }
+        &__right-side {
+          @include flex(null, space-between, column);
+          padding-left: 2rem;
+          @include breakpoint-down("medium") {
+            @include flex();
+            gap: 2rem;
+          }
+          @include breakpoint-down("small") {
+            padding-top: 2rem;
+            padding-left: 0;
+          }
+          &__title {
+            color: $dark;
+            h5 {
+              font-weight: 500;
+              line-height: 19.2px;
+              font-size: 1.6rem;
+              color: $dark;
+              margin-bottom: 1rem;
+              span {
+                color: $dark-100;
+              }
+              del {
+                color: $dark-100;
+              }
+            }
+          }
+          &__reviews {
+            i {
+              font-size: 1.2rem;
+              color: $mainColor;
+            }
+          }
+          &__buttons {
+            i {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Top seller section ends
+
+// Blog section starts
+.blog {
+  &__title {
+    @include main-title();
+  }
+  &__cards__card {
+    &__img-container {
+      width: 100%;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+    }
+    &__text {
+      padding-top: 2rem;
+      &__title {
+        padding-bottom: 2rem;
+        h5 {
+          font-size: 1.8rem;
+          font-weight: 600;
+          a {
+            color: $dark;
+            transition: 300ms color;
+            &:hover {
+              color: $mainColor;
+            }
+          }
+        }
+      }
+      &__date {
+        padding-bottom: 3rem;
+        color: $dark;
+        span {
+          margin-right: 0.2rem;
+          font-size: 1.4rem;
+          &:nth-child(odd) {
+            font-weight: 600;
+          }
+        }
+      }
+      &__link {
+        font-size: 1.5rem;
+        color: $dark;
+        font-weight: 500;
+        transition: 300ms color;
+        &:hover {
+          color: $mainColor;
+        }
+      }
+    }
+  }
+}
+// Blog section ends
+
+// Brands section starts
+.brands {
+  padding: 8rem 1.5rem;
+  .custom-flex {
+    @include flex(null, center);
+  }
+  &__brand {
+    @include flex(null, center);
+    max-width: 22rem;
+    @include breakpoint-down("medium") {
+      width: 15rem;
+    }
+    cursor: pointer;
+    img {
+      max-width: 100%;
+      opacity: 0.3;
+      transition: $main-transition-speed opacity;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+// Brands section ends
+
+// Footer starts
+@include footer();
+// Footer ends
+
+// back to top button
+.btn-fixed {
+  position: fixed;
+  bottom: 8%;
+  right: 1.5%;
+  border-radius: 4px;
+  padding: 0.3rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: $mainColor;
+  color: $white;
+  opacity: 0;
+  transition: $main-transition-speed opacity;
+  &:hover {
+    border: 1px solid $mainColor;
+    background: $white;
+    color: $dark;
+  }
+  i {
+    font-size: 1.8rem;
+  }
+}
+
+// Javascript related starts
+
+@include canvas();
+
+@include basketCanvas();
+
+@include popup();
+
+@include searchOverlay();
+
+@include product-details();
+
+// Javascript related ends
+
+// Extra
+body::-webkit-scrollbar {
+  width: 0.4rem;
+}
+body::-webkit-scrollbar-track {
+  background-color: $grey;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: $mainColor;
+}
+
+.fa-basket-shopping {
+  @include flex(center, center);
+  width: 100%;
+  height: 100%;
+}

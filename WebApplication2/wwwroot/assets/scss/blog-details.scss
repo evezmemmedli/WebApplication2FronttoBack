@@ -1,0 +1,361 @@
+@import "assets/mixins", "assets/colors";
+
+p {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.showcase {
+  padding-bottom: 8rem;
+  &__img-container {
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+    }
+  }
+  &__blog-content {
+    color: $grey-100;
+    &__title {
+      font-size: 2.4rem;
+      color: $dark;
+      font-weight: 600;
+      line-height: 1.6;
+      padding-bottom: 1rem;
+    }
+    &__date {
+      @include flex();
+      padding-bottom: 2rem;
+      gap: 0.6rem;
+      li {
+        font-size: 1.4rem;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    blockquote {
+      border-left: 5px solid $mainColor;
+      margin: 2.5rem 3.2rem 2.5rem 3rem;
+      background-color: $white-100;
+      padding: 1.5rem;
+    }
+  }
+  &__comments {
+    padding: 8rem 0 4.5rem;
+    &__title {
+      font-size: 2rem;
+      line-height: 1;
+      padding-bottom: 1.5rem;
+      font-weight: 600;
+      color: $dark;
+    }
+    ul {
+      .showcase__comments__comment {
+        border: 1px solid $grey;
+        padding: 1rem 2rem;
+        margin-bottom: 3rem;
+        position: relative;
+        &:nth-child(2) {
+          margin-left: 4rem;
+        }
+        @include flex();
+        @include breakpoint-down("small") {
+          flex-direction: column;
+        }
+        &__img-container {
+          flex-basis: 66px;
+          max-height: 62px;
+          margin-right: 10px;
+        }
+        &__box {
+          position: relative;
+          margin-left: 2rem;
+          &__author {
+            font-size: 1.4rem;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+          }
+          button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: $dark;
+            font-size: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            text-transform: capitalize;
+            border: 1px solid $grey;
+            background-color: $white;
+            cursor: pointer;
+            &:hover {
+              background-color: $mainColor;
+              color: $white;
+            }
+          }
+          &__date {
+            font-size: 13px;
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  &__submit-content {
+    > div {
+      h5 {
+        color: $dark;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+      p {
+        padding: 1rem 0;
+      }
+    }
+    &__form {
+      &__content {
+        &__textarea {
+          label {
+            color: $dark;
+            font-weight: 500;
+            margin-bottom: 1.4rem;
+            display: block;
+            text-transform: capitalize;
+          }
+          textarea {
+            height: 13rem;
+            margin-bottom: 2.4rem;
+            padding: 1rem;
+            width: 100%;
+            background: $white-100;
+            border: none;
+            outline: none;
+
+            &::placeholder {
+              color: #aaa;
+              font-weight: 300;
+              font-style: italic;
+            }
+          }
+        }
+        &__input {
+          label {
+            color: $dark;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            display: block;
+            text-transform: capitalize;
+          }
+          input {
+            background: $white-100;
+            border: none;
+            color: $grey-100;
+            padding: 1.4rem 1rem;
+            width: 100%;
+            &::placeholder {
+              color: #aaa;
+              font-weight: 300;
+              font-style: italic;
+            }
+          }
+        }
+        .blog__form__btn {
+          margin-top: 3rem;
+          button {
+            @include main-btn();
+          }
+        }
+      }
+    }
+  }
+  &__sidebar {
+    margin-left: 1.5rem;
+    @include breakpoint-down("medium") {
+      margin-top: 6rem;
+      margin-left: 0;
+    }
+    &__card {
+      &__img-container {
+        height: 14.4rem;
+        @include breakpoint-down("medium") {
+          height: 35.4rem;
+        }
+        @include breakpoint-down("small") {
+          max-height: 19.4rem;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        @include breakpoint-down("medium") {
+          height: 35.5rem;
+        }
+      }
+      &__body {
+        text-align: center;
+        padding: 2rem;
+        border: 1px solid $grey;
+        // border-top: none;
+        &__title {
+          //   padding-top: 1rem;
+          h5 {
+            font-size: 1.8rem;
+            font-weight: 500;
+          }
+          span {
+            display: block;
+            font-size: 1.4rem;
+            padding: 1.4rem 0;
+          }
+        }
+        &__social-medias {
+          @include flex(null, center);
+          gap: 2.2rem;
+          li {
+            a {
+              color: $grey-100;
+              transition: $main-transition-speed color;
+              i {
+                font-size: 1.5rem;
+              }
+              &:hover {
+                color: $mainColor;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__search {
+      padding: 3rem 0;
+      &__form {
+        @include flex();
+        input {
+          width: 100%;
+          height: 4.6rem;
+          line-height: 1;
+          font-size: 1.4rem;
+          padding: 0 5.5rem 0 1.5rem;
+          background-color: #f6f6f6;
+          outline: none;
+          border: none;
+          &::placeholder {
+            font-style: italic;
+            color: #aaa;
+          }
+        }
+        button {
+          border: none;
+          padding: 0 1.4rem;
+          background-color: $mainColor;
+          transition: $main-transition-speed background-color;
+          cursor: pointer;
+          i {
+            color: $white;
+            font-size: 1.8rem;
+          }
+          &:hover {
+            background-color: $black;
+          }
+        }
+      }
+    }
+    &__recent {
+      &__posts {
+        &__post {
+          @include flex();
+          margin-bottom: 3rem;
+          &__img-container {
+            width: 8rem;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          &__content {
+            padding-left: 1rem;
+            width: calc(100% - 8rem);
+            span {
+              display: block;
+              font-size: 1.4rem;
+              line-height: 1;
+              padding-bottom: 1rem;
+            }
+            h5 {
+              font-weight: 500;
+              color: $dark;
+              font-size: 1.6rem;
+              transition: $main-transition-speed color;
+              cursor: pointer;
+              &:hover {
+                color: $mainColor;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__title {
+      font-size: 2rem;
+      line-height: 1;
+      font-weight: 500;
+      margin-bottom: 4rem;
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        background-color: $grey;
+      }
+      &::after {
+        content: "";
+        height: 1.3px;
+        position: absolute;
+        bottom: -1rem;
+        left: 0;
+        background-color: $dark;
+        width: 18%;
+      }
+    }
+    &__categories {
+      margin-bottom: 3.5rem;
+      &__body {
+        li {
+          @include flex(null, space-between);
+          transition: $main-transition-speed color;
+          margin-bottom: 2rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          a {
+            transition: $main-transition-speed color;
+            color: $black;
+          }
+
+          &:hover {
+            color: $mainColor;
+            a {
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+    &__tags {
+      &__body {
+        a {
+          display: inline-block;
+          color: $black;
+          font-size: 1.4rem;
+          border: 1px solid $grey;
+          padding: 0.8rem 1.5rem;
+          display: inline-block;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}

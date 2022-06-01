@@ -1,0 +1,485 @@
+@import "assets/mixins", "assets/colors";
+
+.shop {
+  &__sidebar {
+    @include breakpoint-down("medium") {
+      padding-bottom: 6rem;
+    }
+    &__title {
+      margin-bottom: 2rem;
+      h3 {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1;
+        text-transform: capitalize;
+      }
+    }
+    &__body {
+      padding-bottom: 3rem;
+      ul {
+        li {
+          @include flex(null, space-between);
+          margin-bottom: 2rem;
+          &:last-child {
+            margin: 0;
+          }
+          a {
+            color: $dark;
+            transition: 300ms color;
+            &:hover {
+              color: $mainColor;
+            }
+          }
+
+          span {
+            color: $dark;
+          }
+        }
+      }
+      .btn--sidebar {
+        width: max-content;
+        height: max-content;
+        border: none;
+        background-color: $white-300;
+
+        color: $dark;
+        font-size: 1.4rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-transform: uppercase;
+        padding: 1rem 1.5rem;
+        border-radius: 3px;
+        &:hover {
+          background-color: $mainColor;
+          color: $white;
+        }
+      }
+    }
+    &__bannerSale {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__products {
+    margin-left: 1.5rem;
+    &__top-bar {
+      &__sort-buttons {
+        @include breakpoint-down("medium") {
+          @include flex(null, center);
+          gap: 1rem;
+        }
+        #grid-sort {
+          background-color: $mainColor;
+        }
+        button {
+          width: 4rem;
+          height: 4rem;
+          background-color: #9e9e9e;
+          color: $white;
+
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+      &__sort-info {
+        @include flex(center, flex-end);
+        height: 100%;
+        row-gap: 2rem;
+        @include breakpoint-down("medium") {
+          justify-content: flex-start;
+          width: 100%;
+        }
+        @include breakpoint-down("small") {
+          flex-direction: column;
+        }
+        &__left-side {
+          margin-right: 2rem;
+          @include flex();
+          p {
+            width: 9rem;
+            @include flex(center);
+            margin-right: 1rem;
+          }
+          select {
+            width: 20rem;
+            padding: 0 1rem;
+            background-color: $white;
+            border-radius: 5px;
+            border: 1px solid #e8e8e8;
+            color: $dark-100;
+            padding: 10px 10px;
+          }
+        }
+      }
+    }
+
+    &__cards {
+      // overflow: hidden;
+
+      @include breakpoint-down("small") {
+        #mycol {
+          width: 100%;
+        }
+      }
+
+      #cards--2 {
+        padding: 3rem 0;
+
+        .products__full__cards {
+          padding: 1.5rem;
+          margin-bottom: 3rem;
+          border: 1px solid $grey;
+
+          &__card {
+            @include flex();
+            @include breakpoint-down("small") {
+              flex-direction: column;
+            }
+            &__top {
+              &__img {
+                overflow: hidden;
+                width: 27rem;
+                border: 1px solid $grey;
+                cursor: pointer;
+                @include flex(null, center);
+
+                @include breakpoint-down("medium") {
+                  width: 19rem;
+                }
+                @include breakpoint-down("small") {
+                  width: 100%;
+                }
+                img {
+                  max-width: 100%;
+                  transition: $main-transition-speed transform;
+                  &:hover {
+                    transform: scale(1.2);
+                  }
+                }
+              }
+            }
+            &__bottom {
+              color: $dark;
+              margin-left: 3rem;
+              @include breakpoint-down("small") {
+                margin-left: 0;
+                margin-top: 2rem;
+              }
+              &__info {
+                h5 {
+                  font-size: 2.2rem;
+                  line-height: 2.64rem;
+                  font-weight: 500;
+                  transition: $main-transition-speed color;
+                  cursor: pointer;
+                  &:hover {
+                    color: $mainColor;
+                  }
+                }
+                span,
+                del {
+                  display: inline-block;
+                  padding: 1.5rem 0;
+                }
+                span {
+                  font-size: 1.8rem;
+                  margin-right: 0.4rem;
+                }
+                p {
+                  padding-bottom: 2.5rem;
+                  line-height: 1.7;
+                }
+              }
+              &__buttons {
+                i {
+                  font-size: 1.8rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      .products__cards__card {
+        animation: none;
+
+        &__top {
+          @include flex(null, center);
+
+          &__img {
+            width: 27rem;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+      .scale-animation {
+        @include scaleAnimation();
+      }
+      .move-to-left {
+        @include moveToLeft();
+      }
+    }
+  }
+  &__custom__order--1 {
+    order: 0;
+    @include breakpoint-down("medium") {
+      order: 1;
+    }
+  }
+  &__custom__order--2 {
+    order: 1;
+    @include breakpoint-down("medium") {
+      order: 0;
+    }
+  }
+}
+
+// input range css start
+.price-input {
+  @include flex();
+  width: 100%;
+  margin: 1.5rem 0;
+}
+.price-input .field {
+  @include flex();
+  flex: 1;
+  height: 4.5rem;
+  align-items: center;
+  & span {
+    font-size: 1.4rem;
+  }
+  & input {
+    width: 25%;
+    height: 70%;
+    outline: none;
+    text-align: center;
+    border: none;
+  }
+
+  div {
+    text-align: end;
+  }
+  #price {
+    font-weight: 500;
+    font-size: 1.6rem;
+  }
+}
+
+.price-input .separator {
+  padding: 0 0.5rem;
+  @include flex(center, center);
+}
+.slider {
+  height: 5px;
+  position: relative;
+  background: #ddd;
+  border-radius: 5px;
+}
+.slider .progress {
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 5px;
+  background: $mainColor;
+}
+.range-input {
+  position: relative;
+}
+.range-input input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: $mainColor;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+input[type="range"]::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  background: $mainColor;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+// input range css end
+
+//select styling starts
+.shop__products__top-bar__sort-info__left-side__form {
+  @include flex(center, center);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.select {
+  position: relative;
+  width: 22.5rem;
+  height: 4rem;
+  cursor: pointer;
+  background-color: $white;
+  box-shadow: 0 2px 0 $white;
+  border-radius: 2px;
+  transition: all 0.2s ease-in-out;
+
+  &_expand {
+    width: 0;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    color: $grey-100;
+    right: 0;
+    &::after {
+      content: "\003E";
+      position: absolute;
+      top: 60%;
+      right: 8px;
+      transform: translate(-50%, -50%) rotate(90deg) scaleY(1.75);
+      color: $grey-100;
+      font-size: 1rem;
+      font-weight: 300;
+      pointer-events: none;
+      z-index: 2;
+      transform-origin: 50% 0;
+      transition: all 0.4s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+      opacity: 0.6;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:checked::after {
+      transform: translate(-50%, -50%) rotate(90deg) scaleX(-1) scaleY(1.75);
+    }
+  }
+
+  &_expandLabel {
+    display: block;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  &_close {
+    display: none;
+  }
+
+  &_closeLabel {
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+
+  &_items {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #e8e8e8;
+    border-radius: 2px;
+    padding-top: 4rem;
+    color: $grey-100;
+  }
+
+  &_input {
+    display: none;
+  }
+
+  &_label {
+    transition: all 0.3s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+    display: block;
+    height: 0;
+    font-size: 1.2rem;
+    line-height: 4rem;
+    overflow: hidden;
+    background-color: #fff;
+    cursor: pointer;
+    padding-left: 1rem;
+
+    &-placeholder {
+      height: 4rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      color: $grey-100;
+    }
+  }
+
+  &_expand:checked {
+    + .select_closeLabel {
+      display: block;
+
+      + .select_options {
+        .select_label {
+          height: 40px;
+          &:hover {
+            background-color: #f7f7f7;
+          }
+        }
+
+        + .select_expandLabel {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_input:checked + .select_label {
+    height: 4rem;
+    margin-top: -4rem;
+  }
+}
+// select styling ends
+
+.list-view__container {
+  display: block !important;
+
+  @include moveToLeft();
+}
+.grid-view__container {
+  @include scaleAnimation();
+}
+
+#cards--2 {
+  display: none;
+}
+.hidden {
+  display: none !important;
+}
